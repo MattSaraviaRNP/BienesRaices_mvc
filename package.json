@@ -1,0 +1,24 @@
+{
+  "name": "bienesraices_mvc",
+  "version": "1.0.0",
+  "description": "Mi primera chamba de Node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon"
+  },
+  "keywords": [
+    "MVC",
+    "Pug",
+    "TailWinds",
+    "MySQL",
+    "Sequelize"
+  ],
+  "author": "Matt Saravia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  }
+}
