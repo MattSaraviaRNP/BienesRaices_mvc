@@ -59,7 +59,7 @@ se pueden agrupar las peticiones a una ruta en especifico de la forma
       })
 ```
 
-### Template Engines 
+### Template Engines  y MVC
 
 Son motores de plantillas son tercnologias que nos permiten crear el codigo html para mostrr informacion contenida en variables
 
@@ -80,3 +80,73 @@ pug tiee las siguientes caracteristicas
 - se coloca solo el nombre de la etiqueta seguido del contenido como h2 hola
 - al tabular indicamos que son hijos de la etiqueta anterior
 - se pueden agregar clases 
+
+
+- MVC 
+
+Patron de arquitectura de software que permite la separacion de obligaciones de cada pieza del codigo, enfatizando la separacion del backend con el frontend 
+
+Modelo: Es el encargado de las interacciones con la base de datos, consultando la base de datos sin mostrar la informacion
+
+Vista: se encarga de todo lo que se ve en pantalla 
+
+controlador: el controlador es la comunicacion entre el modelo y la vsita, es quien se encarga de llamar un modelo determinado segun sea necesario
+
+router en mvc es el encargdo de registrar todas las URLS  o endpoints que va utilizar el usuario
+
+
+- Implementacion de controles 
+
+solo se puede tener un export default por archivo, en caso de los controladores los nombramos como nombre de objeto
+
+   Resumen del capitulo
+   que aprendimos en el capitulo anterior ?
+   -el routing y el mvc son mejores amigos
+   -Debemos tener cuidado con los export
+   -los template engines son sencillos y practicos 
+
+  lo demas sigue perdido en el caos!!
+
+  ### Tailwindcss
+
+   para instalar tailwind se necesitan las siguientes dependencias 
+
+   ``npm install -D tailwindcss autoprefixer postcss postcss-cli``
+
+luego debemos decirle a node donde encontrar la ruta de archivos  en el index . js
+
+con la linea: ``app.use(express.static('public'))``
+
+pero tambien debemos utilizar la siguiente linea de comando al final
+
+``npx tailwindcss init -p``
+
+lo cual nos crea dos archivos y en el config.js debemos decirle donde esta el ccss
+
+para poder escalar bien esto utilizamos este truco
+``content: ["./views/**/*.pug",],`` que indica que cualquier archivo en esas rutas contal y tenga la terminacon.pug 
+
+para compilarlo debemos agregarlo a nuestro package.json de la siguiente forma
+
+``"css" : "postcss public/css/tailwindcss.css - o public/css/app.css"``
+
+lo cual le dice que busque el archivo tailwindcss.css y lo compile en el archivo llamado app
+
+
+a mi me da un error medio afrodisiaco respecto al tipo de archivo ya que esta version de node no soporta cjs asi que me toco ponerle mjs
+
+para re utilizar componentes se puede extender codigo de otro archivo con 
+
+extends ../...
+
+pero se debe definir por medio de un bloque de la forma 
+
+        ```
+        main(class="mx-auto container mt-10 px-2")
+            block contenido
+        ```
+ese bloque queda libre para que otro template use ese contenido
+
+para el tailwind debo poner --watch para que no tener que compilar cada vez que realice un cambio
+
+para embeber variables del controlador usamos  la sintaxis #{variable}

@@ -15,6 +15,10 @@ app.use('/auth',usuarioRoutes)
 app.set('view engine','pug')
 app.set('views','./views')
 
+// carpeta pubica
+
+app.use(express.static('public'))
+
 // Definir un puerto y arrancar el proyecto es lo unico necesario
 
 const port = 3000;
