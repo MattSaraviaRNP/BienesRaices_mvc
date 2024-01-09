@@ -150,3 +150,45 @@ ese bloque queda libre para que otro template use ese contenido
 para el tailwind debo poner --watch para que no tener que compilar cada vez que realice un cambio
 
 para embeber variables del controlador usamos  la sintaxis #{variable}
+
+para poner una clase en tailwind usamos **#**
+
+los atributos se colocan dentro de parentesis
+
+Tailwind permite heredar atributos si le aplicamos clases a los elementos padres
+
+tenemos sintaxis para clases y para acciones de la forma 
+
+``input(class="w-full bg-indigo-600 hover:bg-indigo-700"type="submit" value="Crear Cuenta")``
+
+notar que el evento en este caso hover esta dentro del mismo atributo que el color de fondo incluso esta sintaxis es la que se usa para querys tambien
+
+
+Que aprendimos en este capitulo? 
+- Utilizar tailwind requiere practica y experiencia
+- podemos colocar clases con el . ids con el # 
+- existe una sintaxis especial para los eventos o scripts 
+
+lo demas sigue perdido en el caos!
+
+
+### Routing y ORM
+
+vamos a navegar entre ventanas por medio del routing se utilizan etiquetas a sin mas 
+vaya vendida d humo
+
+
+que es un ORM
+
+Object Relational Mapping
+
+Es una tecnica que se utiliza donde los datos de una base de datos son tratados como Objetos, utilizando un paradigma de programacion Orientado a objetos 
+
+Se instalan como librerias y suele vivir en el modelo, pero es llamado en el controlador
+
+Ventajas:
+- crea aplicacioens con bases de datos
+-  Sequelize sera el que vamos a utilizar en este curso
+
+
+
