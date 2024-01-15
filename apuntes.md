@@ -191,4 +191,72 @@ Ventajas:
 -  Sequelize sera el que vamos a utilizar en este curso
 
 
+### conexion a la base de datos
 
+
+en una arpeta especifica se suele guardar la configuracion de la base de datos  usamos un archivo db.js en una carpeta config 
+utilizando la dependencia Sequelize de la siguiente forma 
+
+``import Sequelize from 'sequelize'``
+
+```
+import Sequelize from 'sequelize'
+
+const db = new Sequelize('bienesraices_node_mvc', 'root', 'berserk', {
+    host: 'localhost',
+    port: '3306',
+    dialect: 'mysql',
+    define: {
+        timestamps: true
+    },
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 3000,
+        idle:10000
+    },
+    operatorAliases:false
+    
+});
+
+export default db;
+```
+
+el timestamps permite que se creen dos campos de dechas actualizado por ejemplo o creado
+
+pool mantiene el control de las conexiones maximas , minimas y el tiempo de espera con acquiere y el de desconexion con idle 
+
+### Variables de Entorno
+
+sirven para guardar informacion sensible de nuestros proyectos
+
+hay uan dependencia llamada *dotenv* ver el codigo en el config.js
+
+
+ahora creamos los modelos!
+
+para crear los modelos hacedmos un archivo dsitinto e importamos Sequelize, luego con la funcion db.define() creranios kis nidekius
+
+### Conectar la vista  al modelo
+
+ok, hay que recordar crear el nuevo metodo en el controlador, exportarlo desde alli e importarlo en las rutas
+para luego colocar en el form hacia donde debe dirigirse form en la vista
+
+
+para revibir la informacion usamos el req.body, pero tenemos que indicarle a express que quewreemos recibir peticiones
+
+
+ahora veremos como generar un registro en la base de datos
+
+cuando usamos conexiones o peticiones las funciones deben ser asincronas con *async* y *await* para evitar que pase de linea
+
+
+### Validacion de formularios
+
+
+para eso utilizamos la dependencia express-validator
+
+import { check, validationresult } from 'express-validator'
+
+
+uno valida el campo y el otro guarda el resultado de la validacion
